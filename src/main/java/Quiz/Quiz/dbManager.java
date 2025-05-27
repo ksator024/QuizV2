@@ -46,5 +46,12 @@ public class dbManager {
 		return max;
 		
 	}
+	public void close() {
+		try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
