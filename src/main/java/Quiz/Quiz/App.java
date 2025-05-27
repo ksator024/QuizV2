@@ -24,15 +24,15 @@ public class App extends Application  implements EventHandler<ActionEvent>{
     public void start(Stage stage) throws Exception  {
     	db = new dbManager();
     	System.out.println(db.maxId()+"");
-    	aktuelleFrage = db.getFrage(0);
-    	//Layout l = new Layout(this);
+    	aktuelleFrage = db.getFrage(2);
+    	Layout l = new Layout(this);
     	
-    //	l.setFrage(aktuelleFrage);
+    	l.setFrage(aktuelleFrage);
     	
     	
-     //   Scene scene = new Scene(l, 800, 600);
-       // stage.setScene(scene);
-       // stage.show();
+        Scene scene = new Scene(l, 800, 600);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {

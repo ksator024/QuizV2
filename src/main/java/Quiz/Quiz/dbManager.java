@@ -15,7 +15,8 @@ public class dbManager {
 	}
 
 	public Frage getFrage(int FragenId) throws Exception {
-		PreparedStatement stm = con.prepareStatement("Select * from Fragen;");
+		PreparedStatement stm = con.prepareStatement("Select * from Fragen where id = ?;");
+		stm.setString(1, FragenId + "");
 		ResultSet set = stm.executeQuery();
 		if(!set.next()) {
 			throw new Exception("frage nicht gefunden"); 
