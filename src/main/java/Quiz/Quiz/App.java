@@ -25,7 +25,7 @@ public class App extends Application  implements EventHandler<ActionEvent>{
     public void start(Stage stage) throws Exception  {
     	db = new dbManager();
     	System.out.println(db.maxId()+"");
-    	aktuelleFrage = db.getFrage(2);
+    	aktuelleFrage = db.getFrage(3);
     	Layout l = new Layout(this);
     	
     	l.setFrage(aktuelleFrage);
