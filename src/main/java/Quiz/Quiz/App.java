@@ -20,6 +20,7 @@ public class App extends Application  implements EventHandler<ActionEvent>{
 	BorderPane root = new BorderPane();
 	dbManager db;
 	Frage aktuelleFrage;
+	FragenManager fm;
     @Override
     public void start(Stage stage) throws Exception  {
     	db = new dbManager();
@@ -45,8 +46,10 @@ public class App extends Application  implements EventHandler<ActionEvent>{
 		if(!(n.getId().equals("Antwort"))) {
 		if(aktuelleFrage.getRichtigeAntwort().equals(n.getText())) {
 			//richtige Antwort
+			
 		}
 		else {			
+			
 			//Falsche Antwort
 		}
 		}
