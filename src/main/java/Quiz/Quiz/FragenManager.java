@@ -15,8 +15,6 @@ public class FragenManager {
 		}
 		Frage neueFrage = db.getFrage(0);
 		return neueFrage;
-		
-		
 	}
 	
 	
