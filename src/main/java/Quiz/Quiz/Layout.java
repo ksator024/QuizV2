@@ -115,6 +115,8 @@ public class Layout extends BorderPane
 		//		C		D
 		
 		vbox2.getChildren().add(labelFrage);
+		labelFrage.setMaxWidth(300);
+		labelFrage.setWrapText(true);
 		vbox2.setTranslateX(240);	// die Zahlen können geändert werden. Sie dienen nur der Optik
 		vbox2.setTranslateY(20);
 		
