@@ -129,7 +129,7 @@ public class Layout extends BorderPane
 
 
 		hbox4.setTranslateX(50);
-		hbox4.setTranslateY(-80);
+		hbox4.setTranslateY(-150);
 
 		
 
