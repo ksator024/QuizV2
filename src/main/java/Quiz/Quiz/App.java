@@ -1,5 +1,4 @@
 
-
 //testitng
 package Quiz.Quiz;
 
@@ -8,57 +7,66 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
 
 /**
  * JavaFX App
  */
-public class App extends Application  implements EventHandler<ActionEvent>{
+public class App extends Application implements EventHandler<ActionEvent> {
 
 	BorderPane root = new BorderPane();
 	dbManager db;
 	Frage aktuelleFrage;
 	FragenManager fm;
-    @Override
-    public void start(Stage stage) throws Exception  {
-    	db = new dbManager();
-    	System.out.println(db.maxId()+"");
-    	aktuelleFrage = db.getFrage(3);
-    	Layout l = new Layout(this);
-    	
-    	l.setFrage(aktuelleFrage);
-    	
-    	
-        Scene scene = new Scene(l, 800, 600);
-        stage.setScene(scene);
-        stage.show();
-    }
+	Layout l;
 
-    public static void main(String[] args) {
-        launch();
-    }
-    
-    @Override
-    public void handle(ActionEvent event) {
-		Button n = (Button)event.getSource(); // Das ist der gedrueckte Button
-		if(!(n.getId().equals("Antwort"))) {
-		if(aktuelleFrage.getRichtigeAntwort().equals(n.getText())) {
-			//richtige Antwort
-			
-		}
-		else {			
-			
-			//Falsche Antwort
-		}
-		}
-		else {
+	@Override
+	public void start(Stage stage) throws Exception {
+		db = new dbManager();
+		fm = new FragenManager(db);
+		System.out.println(db.maxId() + "");
+		aktuelleFrage = db.getFrage(3);
+		l = new Layout(this);
+
+		l.setFrage(aktuelleFrage);
+
+		Scene scene = new Scene(l, 800, 600);
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	public static void main(String[] args) {
+		launch();
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
+		Object temp = event.getSource(); // Das ist der gedrueckte Button
+		if (temp instanceof RadioButton) {
+			RadioButton n = (RadioButton) temp;
+			if (aktuelleFrage.getRichtigeAntwort().equals(n.getText())) {
+				// richtige Antwort
+				System.out.println("richtig");
+
+			} else {
+				System.out.println("falsch");
+				// Falsche Antwort
+			}
+		} else {
+			Button n = (Button) temp;
+			System.out.println("TEST");
+			try {
+				aktuelleFrage = fm.neueFrage();
+				l.setFrage(aktuelleFrage);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 				
-			//weiterschalten
-			
+			// weiterschalten
 		}
-    	
-    }
-    
+	}
+
 }
