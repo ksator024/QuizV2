@@ -64,6 +64,8 @@ public class Layout extends BorderPane
 		weiterKnopf.setFont(fon);
 		weiterKnopf.setMinWidth(180);
 		weiterKnopf.setMinHeight(90);
+		weiterKnopf.setId("weiterbutton");
+		weiterKnopf.setOnAction(app);
 		buttonBox.getChildren().add(weiterKnopf);
 		
 		RadioButton RadioA = new RadioButton();
@@ -177,6 +179,7 @@ public class Layout extends BorderPane
 		hbox2.getChildren().clear();
 		hbox3.getChildren().clear();
 		hbox4.getChildren().clear();
+		buttonBox.getChildren().clear();
 		
 		setFrage(fragestellung);
 		setAntwort(antwort);

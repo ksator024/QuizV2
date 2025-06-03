@@ -9,12 +9,21 @@ public class FragenManager {
 	
 	
 	Frage neueFrage() throws Exception {
-		int id = 0;
-		while(sessionIds.contains(id)){
-			id = (int) Math.random()*db.maxId() +1;
-		}
-		Frage neueFrage = db.getFrage(0);
+		int id;;
+		//while(sessionIds.contains(id)){
+	//		id = (int) Math.random()*db.maxId() +1;
+		//}
+		id = (int) (Math.random()*db.maxId() +1);
+		System.out.println("id"+id);
+		System.out.println(db.maxId());
+		Frage neueFrage = db.getFrage(id);
 		return neueFrage;
+	}
+
+
+	public FragenManager(dbManager db) {
+		super();
+		this.db = db;
 	}
 	
 	
