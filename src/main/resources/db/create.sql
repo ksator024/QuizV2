@@ -48,7 +48,7 @@ INSERT INTO Fragen (frage, antwort1, antwort2, antwort3, antwort4, richtigeAntwo
 ('Wer war der erste Präsident der USA?', 'George Washington', 'Abraham Lincoln', 'Thomas Jefferson', 'John Adams', 'George Washington', 'Geschichte'),
 ('Welcher Planet ist der Sonne am nächsten?', 'Merkur', 'Mars', 'Venus', 'Erde', 'Merkur', 'Wissenschaft'),
 ('Was misst ein Thermometer?', 'Temperatur', 'Länge', 'Licht', 'Gewicht', 'Temperatur', 'Wissenschaft'),
-('Was ist ein Homerun?', 'Baseball', 'Tennis', 'Fußball', 'Golf', 'Baseball', 'Sport'),
+('Wo gibt es einen ein Homerun?', 'Baseball', 'Tennis', 'Fußball', 'Golf', 'Baseball', 'Sport'),
 ('In welcher Sportart gibt es ein Ass?', 'Tennis', 'Basketball', 'Boxen', 'Fußball', 'Tennis', 'Sport'),
 ('Wie viele Minuten dauert ein Fußballspiel?', '90', '45', '60', '120', '90', 'Sport'),
 ('Wann fiel die Berliner Mauer?', '1989', '1990', '1988', '1987', '1989', 'Geschichte'),
