@@ -1,12 +1,15 @@
 package Quiz.Quiz;
 
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -18,11 +21,16 @@ public class Layout extends BorderPane
 	VBox vbox = new VBox(); // in der Vbox sind Antwortmöglichkeiten a - c drinnen
 	VBox vbox2 = new VBox(); //dort nur die Frage damit es schöner gelayoutet werden kann
 	HBox hbox = new HBox(); 	// beinhaltet Fragen a und b
-	HBox hbox2 = new HBox();	// beinhaltet Fragen c und d
+	HBox hbox2 = new HBox();	// beinhaltet Fragen c und d 
 	HBox hbox3 = new HBox();
 	HBox hbox4 = new HBox();
 	HBox buttonBox = new HBox();
 		
+	RadioButton RadioA = new RadioButton(); //
+	RadioButton RadioB = new RadioButton();
+	RadioButton RadioC = new RadioButton();
+	RadioButton RadioD = new RadioButton();
+
 	
 	ToggleGroup tg = new ToggleGroup(); // macht das nur ein RadioButton gleichzeitig an sein kann
 
@@ -52,6 +60,12 @@ public class Layout extends BorderPane
 	public void createLayout() 
 	{
 		
+		
+		
+		// wenn irgenjemand auf die Idee kommen sollte
+		// eine Zahl in einem Parameter zu ändern 
+		// wird er von mir höchstpersönlich in die Hölle geschickt!!!!! 
+		
 		Font fon = new Font(fontSize);
 		
 		// erstellung der Labels die dem User als Antwortmöglichkeiten/Frage angezeigt wird
@@ -64,53 +78,44 @@ public class Layout extends BorderPane
 		weiterKnopf.setFont(fon);
 		weiterKnopf.setMinWidth(180);
 		weiterKnopf.setMinHeight(90);
-		weiterKnopf.setId("weiterbutton");
+		weiterKnopf.setId("weiterbutton");  // keine Ahnung was da eigentlich abgeht 😢
 		weiterKnopf.setOnAction(app);
 		buttonBox.getChildren().add(weiterKnopf);
 		
-		RadioButton RadioA = new RadioButton();
-		
-		RadioA.setOnAction(app);
-		RadioA.setText(a);
-		RadioA.setFont(fon);
-		RadioA.setWrapText(true);
-		RadioA.setPrefWidth(250);
-		RadioA.setPrefHeight(150);
-		RadioButton RadioB = new RadioButton();
+		// deklarierung aller Eigenschafften des Radiobuttons
+		RadioA.setOnAction(app); // Action event. Ist in der App als Handle Methode 
+		RadioA.setText(a);		 //	Text setzten
+		RadioA.setFont(fon);	 // Font wurde oben Deklariert
+		RadioA.setWrapText(true);	// ZEILENUMBRUCH 
+		RadioA.setPrefWidth(230);	// falls Christoph das hier liest schuldet er mir eine Fleischkaßsemmel
+		RadioA.setPrefHeight(150);	// Nichts ändern 
 	
 		RadioB.setOnAction(app);
 		RadioB.setText(b);
 		RadioB.setFont(fon);
 		RadioB.setWrapText(true);
-		RadioB.setPrefWidth(250);
+		RadioB.setPrefWidth(230);
 		RadioB.setPrefHeight(150);
 
-		RadioButton RadioC = new RadioButton();
 		
 		RadioC.setOnAction(app);
 		RadioC.setText(c);
 		RadioC.setFont(fon);
 		RadioC.setWrapText(true);
-		RadioC.setPrefWidth(250);
+		RadioC.setPrefWidth(230);
 		RadioC.setPrefHeight(150);
 		
-		RadioButton RadioD = new RadioButton();
 		
 		RadioD.setOnAction(app);
 		RadioD.setText(d);
 		RadioD.setFont(fon);
 		RadioD.setWrapText(true);
-		RadioD.setPrefWidth(250);
+		RadioD.setPrefWidth(230);
 		RadioD.setPrefHeight(150);
-
+		
+		tg.getToggles().clear(); // muss vorher gelöscht werden das die Radiobuttons Global sind
 		tg.getToggles().addAll(RadioA,RadioB,RadioC,RadioD);
 		
-//
-//		RadioB.setText("jasökdllllllllllllllfidohgooerwihgpewr");
-//		RadioC.setText("jasökdllllllllllllllfidohgooerwihgpewr");
-//		RadioA.setText("jasökdflllllllllllllfidohgooerwihgpewr");
-//		RadioD.setText("jasökdflllllllllllllfidohgooerwihgpewr");
-
 		// Aussehen
 		// 		  Frage
 		//		A		B
@@ -119,7 +124,7 @@ public class Layout extends BorderPane
 		vbox2.getChildren().add(labelFrage);
 		labelFrage.setMaxWidth(300);
 		labelFrage.setWrapText(true);
-		vbox2.setTranslateX(240);	// die Zahlen können geändert werden. Sie dienen nur der Optik
+		vbox2.setTranslateX(240);	// die Zahlen können nicht geändert werden. Siehe oben 
 		vbox2.setTranslateY(20);
 		
 		vbox.getChildren().addAll(hbox, hbox2);
@@ -191,6 +196,43 @@ public class Layout extends BorderPane
 		
 		createLayout();
 	}
+	
+	public void disableAllButtons() 
+	{
+		RadioA.setDisable(true);
+		RadioB.setDisable(true);
+		RadioC.setDisable(true);
+		RadioD.setDisable(true);
+
+	}
+
+	public void enableAllButtons() 
+	{
+		RadioA.setDisable(false);
+		RadioB.setDisable(false);
+		RadioC.setDisable(false);
+		RadioD.setDisable(false);
+
+	}
+	
+	public void setColorRed() 
+	{
+		RadioA.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		RadioB.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		RadioC.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		RadioD.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+
+	}
+	public void setNoColor() 
+	{
+		
+		RadioA.setBackground(null);
+		RadioB.setBackground(null);
+		RadioC.setBackground(null);
+		RadioD.setBackground(null);
+
+	}
+	
 	
 	public void setFrage(String frage)
 	{

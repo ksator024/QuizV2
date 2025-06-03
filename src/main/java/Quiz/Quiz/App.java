@@ -5,10 +5,15 @@ package Quiz.Quiz;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -55,14 +60,23 @@ public class App extends Application implements EventHandler<ActionEvent>
 			{
 				// richtige Antwort
 				System.out.println("richtig");
+				l.disableAllButtons();
+				l.setColorRed();
+				n.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
 
 			} else
 			{
 				System.out.println("falsch");
 				// Falsche Antwort
+				l.disableAllButtons();
+				l.setColorRed();
+				
 			}
 		} else
 		{
+			
+			l.enableAllButtons();
+			l.setNoColor();
 			Button n = (Button) temp;
 			System.out.println("TEST");
 			try
