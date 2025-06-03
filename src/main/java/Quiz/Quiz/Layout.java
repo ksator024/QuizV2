@@ -174,10 +174,10 @@ public class Layout extends Pane
 	
 	public void setColorRed() 
 	{
-		RadioA.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-		RadioB.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-		RadioC.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-		RadioD.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		RadioA.setBackground(new Background(new BackgroundFill(Color.RED, new CornerRadii(35), Insets.EMPTY)));
+		RadioB.setBackground(new Background(new BackgroundFill(Color.RED, new CornerRadii(35), Insets.EMPTY)));
+		RadioC.setBackground(new Background(new BackgroundFill(Color.RED, new CornerRadii(35), Insets.EMPTY)));
+		RadioD.setBackground(new Background(new BackgroundFill(Color.RED, new CornerRadii(35), Insets.EMPTY)));
 
 	}
 	public void setNoColor() 

@@ -62,8 +62,7 @@ public class App extends Application implements EventHandler<ActionEvent>
 				System.out.println("richtig");
 				l.disableAllButtons();
 				l.setColorRed();
-				n.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-
+				n.setBackground(new Background(new BackgroundFill(Color.GREEN, new CornerRadii(50), Insets.EMPTY)));
 			} else
 			{
 				System.out.println("falsch");
