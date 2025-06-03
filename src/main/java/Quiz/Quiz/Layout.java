@@ -11,6 +11,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -31,6 +32,7 @@ public class Layout extends BorderPane
 	RadioButton RadioC = new RadioButton();
 	RadioButton RadioD = new RadioButton();
 
+	Pane scoreP = new Pane();
 	
 	ToggleGroup tg = new ToggleGroup(); // macht das nur ein RadioButton gleichzeitig an sein kann
 
@@ -81,6 +83,25 @@ public class Layout extends BorderPane
 		weiterKnopf.setId("weiterbutton");  // keine Ahnung was da eigentlich abgeht 😢
 		weiterKnopf.setOnAction(app);
 		buttonBox.getChildren().add(weiterKnopf);
+		
+		
+		
+		
+		int score = 10;
+		
+		Button scoreB = new Button();
+		scoreB.setText("Score:" + score);
+		scoreB.setMinWidth(180);
+		scoreB.setMinHeight(90);
+		scoreB.setDisable(true);
+		scoreP.getChildren().add(scoreB);
+		scoreB.setLayoutX(600);
+		this.setLeft(scoreP);
+		
+		
+		
+		
+		
 		
 		// deklarierung aller Eigenschafften des Radiobuttons
 		RadioA.setOnAction(app); // Action event. Ist in der App als Handle Methode 
