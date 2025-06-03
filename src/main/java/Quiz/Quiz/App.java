@@ -14,7 +14,8 @@ import javafx.stage.Stage;
 /**
  * JavaFX App
  */
-public class App extends Application implements EventHandler<ActionEvent> {
+public class App extends Application implements EventHandler<ActionEvent>
+{
 
 	BorderPane root = new BorderPane();
 	dbManager db;
@@ -23,50 +24,58 @@ public class App extends Application implements EventHandler<ActionEvent> {
 	Layout l;
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage stage) throws Exception
+	{
 		db = new dbManager();
 		fm = new FragenManager(db);
 		System.out.println(db.maxId() + "");
-		aktuelleFrage = db.getFrage(3);
+		aktuelleFrage = db.getFrage(2);
 		l = new Layout(this);
 
 		l.setFrage(aktuelleFrage);
 
-		Scene scene = new Scene(l, 800, 600);
+		Scene scene = new Scene(l, 800, 800);
 		stage.setScene(scene);
 		stage.show();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		launch();
 	}
 
 	@Override
-	public void handle(ActionEvent event) {
+	public void handle(ActionEvent event)
+	{
 		Object temp = event.getSource(); // Das ist der gedrueckte Button
-		if (temp instanceof RadioButton) {
+		if (temp instanceof RadioButton)
+		{
 			RadioButton n = (RadioButton) temp;
-			if (aktuelleFrage.getRichtigeAntwort().equals(n.getText())) {
+			if (aktuelleFrage.getRichtigeAntwort().equals(n.getText()))
+			{
 				// richtige Antwort
 				System.out.println("richtig");
 
-			} else {
+			} else
+			{
 				System.out.println("falsch");
 				// Falsche Antwort
 			}
-		} else {
+		} else
+		{
 			Button n = (Button) temp;
 			System.out.println("TEST");
-			try {
+			try
+			{
 				aktuelleFrage = fm.neueFrage();
 				l.setFrage(aktuelleFrage);
-			} catch (Exception e) {
+			} catch (Exception e)
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-				
+
 			// weiterschalten
 		}
 	}
-
 }
