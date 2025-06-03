@@ -11,6 +11,25 @@ CREATE TABLE Fragen (
     kategorie VARCHAR(255)
 );
 
+Drop Table if Exists Spieler;
+Create Table Spieler (
+	id Integer PRIMARY Key AutoIncrement,
+	name varchar(255),
+	highscore integer
+	);
+	
+Drop Table if Exists RichtigBeantwortet;
+
+Create Table RichtigBeantwortet(
+	    id INTEGER PRIMARY KEY AUTOINCREMENT,
+		spielerId Integer,
+		fragenId Integer,
+		Foreign Key (spielerId) References Spieler(id),
+		Foreign Key (FragenId) References Fragen(id)
+);
+
+
+
 INSERT INTO Fragen (frage, antwort1, antwort2, antwort3, antwort4, richtigeAntwort, kategorie) VALUES
 ('Was ist eine CPU?', 'Festplatte', 'Speicher', 'Monitor', 'Prozessor', 'Prozessor', 'Technik'),
 ('Wer malte Die Sternennacht?', 'van Gogh', 'Monet', 'Picasso', 'Klimt', 'van Gogh', 'Kunst'),

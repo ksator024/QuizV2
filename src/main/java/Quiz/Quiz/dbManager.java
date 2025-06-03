@@ -55,4 +55,13 @@ public class dbManager {
 		}
 	}
 
+	public Spieler getSpieler(int id) throws SQLException {
+		PreparedStatement stm = con.prepareStatement("Select * from Spieler where id = ?;");
+		stm.setString(1, id +"");
+		ResultSet set = stm.executeQuery();
+		set.next();
+		
+		return new Spieler(set.getInt("id"),set.getString("name"), set.getInt("highscore"));
+	}
+	
 }
