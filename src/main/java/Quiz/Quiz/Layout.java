@@ -6,8 +6,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -52,7 +57,17 @@ public class Layout extends Pane
 	
 	public void createLayout() {
 	    Font fon = new Font(fontSize);
-
+	    Image im = new Image(getClass().getResource("/images/Background.png").toExternalForm(), 
+				800, //breite
+				800, //hoehe
+				true, //x-y Verhaeltnis beibehalten
+				true); 
+	    
+	    BackgroundImage bi = new BackgroundImage(im, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
+				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+		this.setBackground(new Background(bi));
+	    
+	    
 	    Label labelFrage = new Label(this.fragestellung);
 	    labelFrage.setFont(fon);
 	    labelFrage.setMaxWidth(300);
@@ -67,7 +82,7 @@ public class Layout extends Pane
 	    weiterKnopf.setId("weiterbutton");
 	    weiterKnopf.setOnAction(app);
 	    weiterKnopf.setLayoutX(300);
-	    weiterKnopf.setLayoutY(600);
+	    weiterKnopf.setLayoutY(700);
 
 	    int score = 10;
 	    Button scoreB = new Button("Score:" + score);
