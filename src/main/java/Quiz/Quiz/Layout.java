@@ -58,8 +58,8 @@ public class Layout extends Pane
 	public void createLayout() {
 	    Font fon = new Font(fontSize);
 	    Image im = new Image(getClass().getResource("/images/Background.png").toExternalForm(), 
-				800, //breite
-				800, //hoehe
+				800,  //breite
+				800,  //hoehe
 				true, //x-y Verhaeltnis beibehalten
 				true); 
 	    
@@ -67,6 +67,7 @@ public class Layout extends Pane
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(bi));
 	    
+		
 	    
 	    Label labelFrage = new Label(this.fragestellung);
 	    labelFrage.setFont(fon);
@@ -152,11 +153,11 @@ public class Layout extends Pane
 		antwort = frage.getRichtigeAntwort();
 		fragestellung = frage.getFrage();
 		fragenNummer = frage.getId();
-
-							
 		
-
-
+					
+					
+					
+					
 		
 		setFrage(fragestellung);
 		setAntwort(antwort);
