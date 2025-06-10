@@ -64,4 +64,5 @@ public class dbManager {
 		return new Spieler(set.getInt("id"),set.getString("name"), set.getInt("highscore"));
 	}
 	
+	
 }

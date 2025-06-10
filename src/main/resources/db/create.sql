@@ -30,22 +30,26 @@ Create Table RichtigBeantwortet(
 
 
 
+
+INSERT INTO Spieler (id, name, highscore) Values 
+(0, 'OPFER',10)
+
 INSERT INTO Fragen (frage, antwort1, antwort2, antwort3, antwort4, richtigeAntwort, kategorie) VALUES
 ('Was ist eine CPU?', 'Festplatte', 'Speicher', 'Monitor', 'Prozessor', 'Prozessor', 'Technik'),
-('Wer malte Die Sternennacht?', 'van Gogh', 'Monet', 'Picasso', 'Klimt', 'van Gogh', 'Kunst'),
+('Wer malte die Sternennacht?', 'van Gogh', 'Monet', 'Picasso', 'Klimt', 'van Gogh', 'Kunst'),
 ('Welcher Kontinent ist der größte?', 'Asien', 'Afrika', 'Europa', 'Antarktis', 'Asien', 'Geografie'),
 ('Wann war die Französische Revolution?', '1750', '1812', '1789', '1800', '1789', 'Geschichte'),
-('Was ist ein Homerun?', 'Baseball', 'Fußball', 'Tennis', 'Golf', 'Baseball', 'Sport'),
+('Wo passiert ein Homerun?', 'Baseball', 'Fußball', 'Tennis', 'Golf', 'Baseball', 'Sport'),
 ('Was misst ein Thermometer?', 'Temperatur', 'Länge', 'Licht', 'Gewicht', 'Temperatur', 'Wissenschaft'),
 ('Welches Teilchen hat eine negative Ladung?', 'Proton', 'Elektron', 'Photon', 'Neutron', 'Elektron', 'Wissenschaft'),
 ('Wer war ein berühmter Bildhauer der Renaissance?', 'Rembrandt', 'Goethe', 'Michelangelo', 'Picasso', 'Michelangelo', 'Kunst'),
 ('Was bedeutet HTML?', 'HyperText Markup Language', 'Home Tool Markup Language', 'Hyperlink and Text Markup Language', 'HighText Machine Language', 'HyperText Markup Language', 'Technik'),
 ('Was ist die Hauptstadt von Italien?', 'Venedig', 'Florenz', 'Mailand', 'Rom', 'Rom', 'Geografie'),
-('In welcher Sportart gibt es ein Ass?', 'Tennis', 'Boxen', 'Basketball', 'Fußball', 'Tennis', 'Sport'),
+('In welcher Sportart gibt es ein kleinen Ball?', 'Tennis', 'Boxen', 'Basketball', 'Fußball', 'Tennis', 'Sport'),
 ('Wann fiel die Berliner Mauer?', '1988', '1989', '1987', '1990', '1989', 'Geschichte'),
 ('Wozu dient ein Router?', 'Musik hören', 'Scannen', 'Drucken', 'Netzwerkverbindung', 'Netzwerkverbindung', 'Technik'),
-('Wie viele Minuten dauert ein Fußballspiel?', '90', '120', '60', '45', '90', 'Sport'),
-('Was ist die chemische Formel von Salz?', 'NaCl', 'O2', 'CO2', 'H2O', 'NaCl', 'Wissenschaft'),
+('Wie viele Minuten dauert ein Fußballspiel ohne Verlängerung?', '90', '120', '60', '45', '90', 'Sport'),
+('Was ist die chemische Formel von Salz?', 'NaCl', 'O2', 'CO2', 'H2O', 'NaCl', 'Wissenschaft'),	
 ('Wer war Kaiser von Frankreich?', 'Karl der Große', 'Napoleon', 'Bismarck', 'Hitler', 'Napoleon', 'Geschichte'),
 ('Was ist die Hauptstadt von Italien?', 'Rom', 'Mailand', 'Florenz', 'Venedig', 'Rom', 'Geografie'),
 ('Wer war der erste Präsident der USA?', 'John Adams', 'Thomas Jefferson', 'George Washington', 'Abraham Lincoln', 'George Washington', 'Geschichte'),

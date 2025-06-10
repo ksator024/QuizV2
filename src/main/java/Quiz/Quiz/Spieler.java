@@ -14,6 +14,11 @@ public class Spieler {
 		this.name = name;
 		this.highscore = highscore;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return id + " " + name +" " + highscore;
+	}
 	
 	
 }
