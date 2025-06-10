@@ -57,7 +57,7 @@ public class Layout extends Pane
 	    labelFrage.setFont(fon);
 	    labelFrage.setMaxWidth(300);
 	    labelFrage.setWrapText(true);
-	    labelFrage.setLayoutX(300);
+	    labelFrage.setLayoutX(260);
 	    labelFrage.setLayoutY(20);
 
 	    Button weiterKnopf = new Button("WEITER");
