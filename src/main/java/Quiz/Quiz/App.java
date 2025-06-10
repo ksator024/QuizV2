@@ -31,12 +31,18 @@ public class App extends Application implements EventHandler<ActionEvent>
 	@Override
 	public void start(Stage stage) throws Exception
 	{
+		
+
+		
 		db = new dbManager();
 		fm = new FragenManager(db);
+		Spieler spieler = db.getSpieler(0);
+		System.out.println(spieler.toString());
+		
 		System.out.println(db.maxId() + "");
 		aktuelleFrage = db.getFrage(2);
 		l = new Layout(this);
-
+		
 		l.setFrage(aktuelleFrage);
 
 		Scene scene = new Scene(l, 800, 800);
