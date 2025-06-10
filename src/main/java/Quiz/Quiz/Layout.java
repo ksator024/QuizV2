@@ -82,7 +82,7 @@ public class Layout extends Pane
 	    weiterKnopf.setId("weiterbutton");
 	    weiterKnopf.setOnAction(app);
 	    weiterKnopf.setLayoutX(300);
-	    weiterKnopf.setLayoutY(700);
+	    weiterKnopf.setLayoutY(680);
 
 	    int score = 10;
 	    Button scoreB = new Button("Score:" + score);
@@ -126,16 +126,16 @@ public class Layout extends Pane
 
 	    //ABOSLUTE POSTIOTN 
 	    RadioA.setLayoutX(150);
-	    RadioA.setLayoutY(180);
+	    RadioA.setLayoutY(200);
 
 	    RadioB.setLayoutX(450);
-	    RadioB.setLayoutY(180);
+	    RadioB.setLayoutY(200);
 
 	    RadioC.setLayoutX(150);
-	    RadioC.setLayoutY(450);
+	    RadioC.setLayoutY(470);
 
 	    RadioD.setLayoutX(450);
-	    RadioD.setLayoutY(450);
+	    RadioD.setLayoutY(470);
 
 	    this.getChildren().clear();
 	    this.getChildren().addAll(labelFrage, RadioA, RadioB, RadioC, RadioD, scoreB, weiterKnopf);
