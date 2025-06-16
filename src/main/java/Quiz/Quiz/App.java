@@ -64,6 +64,8 @@ public class App extends Application implements EventHandler<ActionEvent>
 			RadioButton n = (RadioButton) temp;
 			if (aktuelleFrage.getRichtigeAntwort().equals(n.getText()))
 			{
+				l.setScore(l.getScore() + 10);
+
 				// richtige Antwort
 				System.out.println("richtig");
 				l.disableAllButtons();
@@ -71,6 +73,7 @@ public class App extends Application implements EventHandler<ActionEvent>
 				n.setBackground(new Background(new BackgroundFill(Color.GREEN, new CornerRadii(50), Insets.EMPTY)));
 			} else
 			{
+				l.setScore(0);
 				System.out.println("falsch");
 				// Falsche Antwort
 				l.disableAllButtons();
@@ -79,7 +82,6 @@ public class App extends Application implements EventHandler<ActionEvent>
 			}
 		} else
 		{
-			
 			l.enableAllButtons();
 			l.setNoColor();
 			Button n = (Button) temp;
