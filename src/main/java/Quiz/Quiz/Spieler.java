@@ -19,6 +19,10 @@ public class Spieler {
 		// TODO Auto-generated method stub
 		return id + " " + name +" " + highscore;
 	}
+	public int getId() {
+		return id;
+	}
+	
 	
 	
 }

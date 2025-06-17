@@ -30,9 +30,11 @@ Create Table RichtigBeantwortet(
 
 
 
+INSERT INTO Spieler (name, highscore) Values 
+('OPFER',10);
 
-INSERT INTO Spieler (id, name, highscore) Values 
-(0, 'OPFER',10)
+Insert INTO RichtigBeantwortet(spielerId,fragenId) Values
+(1,1);
 
 INSERT INTO Fragen (frage, antwort1, antwort2, antwort3, antwort4, richtigeAntwort, kategorie) VALUES
 ('Was ist eine CPU?', 'Festplatte', 'Speicher', 'Monitor', 'Prozessor', 'Prozessor', 'Technik'),
@@ -77,3 +79,11 @@ INSERT INTO Fragen (frage, antwort1, antwort2, antwort3, antwort4, richtigeAntwo
 ('Wann fiel die Berliner Mauer?', '1989', '1990', '1988', '1987', '1989', 'Geschichte'),
 ('Was ist die chemische Formel von Salz?', 'NaCl', 'O2', 'H2O', 'CO2', 'NaCl', 'Wissenschaft');
 Select count(*) as c from Fragen;
+SELECT frage from Fragen
+where id = 0;
+
+
+Select f.id, f.frage from RichtigBeantwortet r
+inner join Spieler s on r.spielerId = s.Id
+inner join Fragen f on r.fragenId = f.id
+where s.id = 1;

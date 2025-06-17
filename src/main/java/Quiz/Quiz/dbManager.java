@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class dbManager {
 	Connection con;
@@ -64,5 +65,13 @@ public class dbManager {
 		return new Spieler(set.getInt("id"),set.getString("name"), set.getInt("highscore"));
 	}
 	
+	public ArrayList<Frage> getRichtigeFragen(Spieler spieler) throws SQLException {
+		PreparedStatement stm = con.prepareStatement("Select f.id, f.frage from RichtigBeantwortet inner join Spieler s on r.spielerId = s.Id inner join Fragen f on r.fragenId = f.idwhere s.id = ?;");
+		stm.setString(1, spieler.getId()+"");
+		
+		
+		
+		
+	}
 	
 }
